@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Negel.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:materialframe="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="#0E153A"
+    mc:Ignorable="d">
+
+    <StackLayout>
+        <Image
+            Margin="20"
+            HeightRequest="100"
+            Source="NLogo.png" />
+        <CollectionView x:Name="MainCollectionView">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="2" />
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Image Source="SubBG.png" />
+                        <Label
+                            Margin="40,0,0,0"
+                            FontAttributes="Bold"
+                            FontSize="22"
+                            HorizontalOptions="Start"
+                            Text="{Binding .}"
+                            TextColor="White"
+                            VerticalOptions="Center" />
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+        <Grid VerticalOptions="EndAndExpand">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="65" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image
+                Grid.Column="0"
+                Margin="15"
+                Source="Profile.png" />
+            <Image
+                Grid.Column="1"
+                Margin="15"
+                Source="Chat.png" />
+            <Image
+                Grid.Column="2"
+                Margin="15"
+                Source="Home.png" />
+        </Grid>
+    </StackLayout>
+
+</ContentPage>
