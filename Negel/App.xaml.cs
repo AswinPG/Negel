@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Negel.Subject;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace Negel
         {
             InitializeComponent();
 
-            MainPage = new MainPage();
+            MainPage = new NavigationPage( new SubjectDetailPage());
         }
 
         protected override void OnStart()

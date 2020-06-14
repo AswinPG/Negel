@@ -35,6 +35,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
+        <Button Clicked="Button_Clicked" Text="AddData" />
         <Grid VerticalOptions="EndAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="65" />

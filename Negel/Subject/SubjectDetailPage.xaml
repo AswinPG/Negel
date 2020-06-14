@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Negel.Subject.SubjectDetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="#0E153A"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                Margin="30"
+                FontAttributes="Bold"
+                FontSize="28"
+                HorizontalOptions="Center"
+                Text="SEPM"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Button
+                Margin="30,10,30,10"
+                BackgroundColor="#413CA0"
+                CornerRadius="10"
+                Text="Video Lectures"
+                TextColor="White" />
+            <Frame
+                Margin="30,10,30,10"
+                BackgroundColor="#31227A"
+                CornerRadius="15">
+                <CollectionView x:Name="MainCollectionView">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+
+                                <Label
+                                    Margin="10"
+                                    FontAttributes="Bold"
+                                    FontSize="22"
+                                    HorizontalOptions="Start"
+                                    Text="{Binding .}"
+                                    TextColor="White"
+                                    VerticalOptions="Center" />
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+
+            </Frame>
+            <Button
+                Margin="30,10,30,10"
+                BackgroundColor="#413CA0"
+                CornerRadius="10"
+                Text="Practice Quiz"
+                TextColor="White"
+                VerticalOptions="End" />
+            <Button
+                Margin="30,10,30,20"
+                BackgroundColor="#413CA0"
+                CornerRadius="10"
+                Text="Practice Test"
+                TextColor="White"
+                VerticalOptions="End" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
