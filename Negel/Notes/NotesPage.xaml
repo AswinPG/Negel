@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Negel.Notes.NotesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="#0E153A"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label
+                x:Name="TitleLabel"
+                Margin="30"
+                FontAttributes="Bold"
+                FontSize="28"
+                HorizontalOptions="Center"
+                TextColor="White"
+                VerticalOptions="Center" />
+            <Label
+                x:Name="DetailLabel"
+                Margin="20"
+                HorizontalOptions="Center"
+                TextColor="White"
+                VerticalOptions="Center" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

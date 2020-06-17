@@ -28,7 +28,10 @@
                 Margin="30,10,30,10"
                 BackgroundColor="#31227A"
                 CornerRadius="15">
-                <CollectionView x:Name="MainCollectionView">
+                <CollectionView
+                    x:Name="MainCollectionView"
+                    SelectionChanged="MainCollectionView_SelectionChanged"
+                    SelectionMode="Single">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
                             <Grid>
@@ -38,7 +41,7 @@
                                     FontAttributes="Bold"
                                     FontSize="22"
                                     HorizontalOptions="Start"
-                                    Text="{Binding .}"
+                                    Text="{Binding Heading}"
                                     TextColor="White"
                                     VerticalOptions="Center" />
                             </Grid>

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negel.Android", "Negel.Andr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negel.iOS", "Negel.iOS\Negel.iOS.csproj", "{D66F7BAF-924E-4C8E-9362-FA1027B79A3F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negel", "Negel\Negel.csproj", "{530524F6-50A0-48CC-9B4A-A53EBCDD9363}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Negel", "Negel\Negel.csproj", "{530524F6-50A0-48CC-9B4A-A53EBCDD9363}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

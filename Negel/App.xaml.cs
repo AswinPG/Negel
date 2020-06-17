@@ -11,7 +11,7 @@ namespace Negel
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage( new SubjectDetailPage());
+            MainPage = new NavigationPage( new MainPage());
         }
 
         protected override void OnStart()

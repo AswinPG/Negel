@@ -8,6 +8,7 @@
     xmlns:materialframe="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     BackgroundColor="#0E153A"
+    NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
 
     <StackLayout>
@@ -15,7 +16,10 @@
             Margin="20"
             HeightRequest="100"
             Source="NLogo.png" />
-        <CollectionView x:Name="MainCollectionView">
+        <CollectionView
+            x:Name="MainCollectionView"
+            SelectionChanged="MainCollectionView_SelectionChanged"
+            SelectionMode="Single">
             <CollectionView.ItemsLayout>
                 <GridItemsLayout Orientation="Vertical" Span="2" />
             </CollectionView.ItemsLayout>
@@ -35,7 +39,7 @@
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
-        <Button Clicked="Button_Clicked" Text="AddData" />
+        <!--<Button Clicked="Button_Clicked" Text="AddData" />-->
         <Grid VerticalOptions="EndAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="65" />
@@ -48,15 +52,27 @@
             <Image
                 Grid.Column="0"
                 Margin="15"
-                Source="Profile.png" />
+                Source="Profile.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ProfileTapped" />
+                </Image.GestureRecognizers>
+            </Image>
             <Image
                 Grid.Column="1"
                 Margin="15"
-                Source="Chat.png" />
+                Source="Chat.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="ChatTapped" />
+                </Image.GestureRecognizers>
+            </Image>
             <Image
                 Grid.Column="2"
                 Margin="15"
-                Source="Home.png" />
+                Source="Home.png">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="HomeTapped" />
+                </Image.GestureRecognizers>
+            </Image>
         </Grid>
     </StackLayout>
 
