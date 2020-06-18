@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Negel.iOS", "Negel.iOS\Nege
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Negel", "Negel\Negel.csproj", "{530524F6-50A0-48CC-9B4A-A53EBCDD9363}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MockTest", "MockTest\MockTest.csproj", "{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -73,6 +75,18 @@ Global
 		{530524F6-50A0-48CC-9B4A-A53EBCDD9363}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{530524F6-50A0-48CC-9B4A-A53EBCDD9363}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{530524F6-50A0-48CC-9B4A-A53EBCDD9363}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Release|iPhone.Build.0 = Release|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{F9403B41-3E71-4EC6-8B1E-A7717FAECCF9}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

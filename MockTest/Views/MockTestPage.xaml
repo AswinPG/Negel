@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MockTest.Views.MockTestPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:ffSvg="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MockTest"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid VerticalOptions="FillAndExpand">
+                <StackLayout
+                    x:Name="ActivityRunner"
+                    Margin="0,40,0,0"
+                    HorizontalOptions="Center"
+                    VerticalOptions="Center">
+                    <ActivityIndicator IsRunning="True" Color="Blue" />
+                    <Label Text="Please wait while we fetch the Questions.." TextColor="Blue" />
+                </StackLayout>
+                <StackLayout
+                    x:Name="MainView"
+                    IsVisible="False"
+                    VerticalOptions="FillAndExpand">
+                    <StackLayout Padding="20">
+                        <!--  Question number  -->
+                        <StackLayout Orientation="Horizontal" Spacing="0">
+                            <Label
+                                x:Name="QNumLabel"
+                                FontFamily="Poppins-SemiBold.ttf#Poppins-SemiBold"
+                                FontSize="16"
+                                TextColor="Blue"
+                                VerticalOptions="EndAndExpand" />
+                            <Label
+                                x:Name="QTotal"
+                                Margin="0,0,0,1"
+                                FontFamily="Poppins-Regular.ttf#Poppins-Regular"
+                                FontSize="13"
+                                Text="/100"
+                                TextColor="#031368"
+                                VerticalOptions="End" />
+                        </StackLayout>
+
+                        <!--  Question  -->
+                        <Label
+                            x:Name="QuestionLabel"
+                            FontFamily="Poppins-SemiBold.ttf#Poppins-SemiBold"
+                            FontSize="13"
+                            Text="Who was the commander in charge of the Jalianwalla Bagh massacre?"
+                            TextColor="#031368" />
+                        <Label
+                            x:Name="ParaViewLabel"
+                            Padding="10"
+                            FontFamily="Poppins-Regular.ttf#Poppins-Regular"
+                            FontSize="12"
+                            HorizontalOptions="Center"
+                            Text="View Paragraph"
+                            TextColor="Blue">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="ShowParaTapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+                    <ff:CachedImage x:Name="ImageLayout" Aspect="AspectFit" />
+
+
+                    <StackLayout Padding="20" VerticalOptions="EndAndExpand">
+
+                        <!--  Option 1  -->
+                        <Frame
+                            x:Name="OptionAFrame"
+                            Margin="0,10,0,0"
+                            BackgroundColor="Transparent"
+                            BorderColor="#4C5B71"
+                            CornerRadius="20">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OptionATapped" />
+                            </Frame.GestureRecognizers>
+                            <Label
+                                x:Name="OptionALabel"
+                                FontFamily="Poppins-Medium.ttf#Poppins-Medium"
+                                FontSize="11"
+                                Text="Lord Mountbatten"
+                                TextColor="#161F32" />
+
+                        </Frame>
+
+                        <!--  Option 2  -->
+                        <Frame
+                            x:Name="OptionBFrame"
+                            Margin="0,10,0,0"
+                            BackgroundColor="Transparent"
+                            BorderColor="#4C5B71"
+                            CornerRadius="20">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OptionBTapped" />
+                            </Frame.GestureRecognizers>
+                            <Label
+                                x:Name="OptionBLabel"
+                                FontFamily="Poppins-Medium.ttf#Poppins-Medium"
+                                FontSize="11"
+                                Text="Robert Clive"
+                                TextColor="#161F32" />
+
+                        </Frame>
+
+                        <!--  Option 3  -->
+                        <Frame
+                            x:Name="OptionCFrame"
+                            Margin="0,10,0,0"
+                            BackgroundColor="Transparent"
+                            BorderColor="#4C5B71"
+                            CornerRadius="20">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OptionCTapped" />
+                            </Frame.GestureRecognizers>
+                            <Label
+                                x:Name="OptionCLabel"
+                                FontFamily="Poppins-Medium.ttf#Poppins-Medium"
+                                FontSize="11"
+                                Text="General Dyer"
+                                TextColor="#161F32" />
+
+                        </Frame>
+
+                        <!--  Option 4  -->
+                        <Frame
+                            x:Name="OptionDFrame"
+                            Margin="0,10,0,0"
+                            BackgroundColor="Transparent"
+                            BorderColor="#4C5B71"
+                            CornerRadius="20">
+                            <Frame.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="OptionDTapped" />
+                            </Frame.GestureRecognizers>
+                            <Label
+                                x:Name="OptionDLabel"
+                                FontFamily="Poppins-Medium.ttf#Poppins-Medium"
+                                FontSize="11"
+                                Text="Aurther Clarke"
+                                TextColor="#161F32" />
+
+                        </Frame>
+                    </StackLayout>
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal" VerticalOptions="End">
+                            <Button
+                                x:Name="PreviousButton"
+                                Margin="30,30,30,20"
+                                BackgroundColor="#320EFF"
+                                BorderColor="White"
+                                BorderWidth="1"
+                                Clicked="PreviousButton_Clicked"
+                                CornerRadius="20"
+                                FontFamily="Poppins-SemiBold.ttf#Poppins-SemiBold"
+                                Text="Previous"
+                                TextColor="White"
+                                VerticalOptions="EndAndExpand" />
+                            <Button
+                                x:Name="NextButton"
+                                Margin="30,30,30,20"
+                                BackgroundColor="#320EFF"
+                                BorderColor="White"
+                                BorderWidth="1"
+                                Clicked="NextButton_Clicked"
+                                CornerRadius="20"
+                                FontFamily="Poppins-SemiBold.ttf#Poppins-SemiBold"
+                                HorizontalOptions="EndAndExpand"
+                                Text="Skip"
+                                TextColor="White"
+                                VerticalOptions="EndAndExpand" />
+                        </StackLayout>
+                        <Label
+                            x:Name="CompleteLabel"
+                            Padding="10,5,10,30"
+                            FontFamily="Poppins-SemiBold.ttf#Poppins-SemiBold"
+                            FontSize="14"
+                            HorizontalOptions="Center"
+                            Text="Complete Test"
+                            TextColor="Blue"
+                            VerticalOptions="EndAndExpand">
+                            <Label.GestureRecognizers>
+                                <TapGestureRecognizer NumberOfTapsRequired="1" Tapped="TapGestureRecognizer_Tapped" />
+                            </Label.GestureRecognizers>
+                        </Label>
+                    </StackLayout>
+
+
+
+                </StackLayout>
+                <Frame
+                    x:Name="ParaLayout"
+                    Margin="18"
+                    Padding="20"
+                    CornerRadius="15"
+                    HorizontalOptions="FillAndExpand"
+                    IsVisible="False"
+                    VerticalOptions="FillAndExpand">
+
+                    <StackLayout>
+                        <Label x:Name="ParaLabel" Text="" />
+                        <Button
+                            Margin="0,20,0,0"
+                            Padding="0"
+                            BackgroundColor="Blue"
+                            Clicked="Button_Clicked"
+                            CornerRadius="20"
+                            FontFamily="Poppins-Bold.ttf#Poppins-Bold"
+                            HorizontalOptions="Center"
+                            Text="Close"
+                            TextColor="White"
+                            VerticalOptions="EndAndExpand" />
+                    </StackLayout>
+
+
+
+                </Frame>
+
+
+            </Grid>
+        </ScrollView>
+
+    </ContentPage.Content>
+</ContentPage>

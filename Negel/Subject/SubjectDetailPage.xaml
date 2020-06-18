@@ -51,15 +51,9 @@
 
             </Frame>
             <Button
-                Margin="30,10,30,10"
-                BackgroundColor="#413CA0"
-                CornerRadius="10"
-                Text="Practice Quiz"
-                TextColor="White"
-                VerticalOptions="End" />
-            <Button
                 Margin="30,10,30,20"
                 BackgroundColor="#413CA0"
+                Clicked="TestClicked"
                 CornerRadius="10"
                 Text="Practice Test"
                 TextColor="White"

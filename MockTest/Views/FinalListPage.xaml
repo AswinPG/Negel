@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MockTest.Views.FinalListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="Review"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid Margin="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <BoxView
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="Blue"
+                    CornerRadius="20"
+                    HeightRequest="20"
+                    HorizontalOptions="Center"
+                    WidthRequest="20" />
+                <Label
+                    Grid.Column="1"
+                    FontFamily="Poppins-Regular.ttf#Poppins-Regular"
+                    Text="Attended" />
+                <BoxView
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    BackgroundColor="Gray"
+                    CornerRadius="20"
+                    HeightRequest="20"
+                    HorizontalOptions="Center"
+                    WidthRequest="20" />
+                <Label
+                    Grid.Column="3"
+                    FontFamily="Poppins-Regular.ttf#Poppins-Regular"
+                    Text="UnAttended" />
+            </Grid>
+            <Label
+                FontFamily="Poppins-Regular.ttf#Poppins-Regular"
+                HorizontalOptions="Center"
+                Text="Click on a question to go to it"
+                TextColor="BlueViolet" />
+
+            <CollectionView
+                x:Name="MainCollectionView"
+                Margin="10"
+                SelectionChanged="MainCollectionView_SelectionChanged"
+                SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="3" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid BackgroundColor="#fafafa">
+
+                            <BoxView
+                                Margin="5"
+                                BackgroundColor="{Binding AttendedColour}"
+                                CornerRadius="80"
+                                HeightRequest="80" />
+                            <Label
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                Text="{Binding QNo}"
+                                TextColor="White"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Button
+                Margin="20"
+                BackgroundColor="Blue"
+                Clicked="Button_Clicked"
+                CornerRadius="20"
+                FontFamily="Poppins-SemiBold.ttf#Poppins-SemiBold"
+                HorizontalOptions="FillAndExpand"
+                Text="Final Submit"
+                TextColor="White"
+                VerticalOptions="EndAndExpand" />
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>

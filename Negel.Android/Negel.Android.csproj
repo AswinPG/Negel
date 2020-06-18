@@ -85,6 +85,10 @@
   <ItemGroup>
     <AndroidAsset Include="Assets\Poppins-Regular.ttf" />
     <AndroidAsset Include="Assets\Poppins-Bold.ttf" />
+    <AndroidAsset Include="Assets\DownlodedVideoDB.db" />
+    <AndroidAsset Include="Assets\Poppins-Light.ttf" />
+    <AndroidAsset Include="Assets\Poppins-Medium.ttf" />
+    <AndroidAsset Include="Assets\Poppins-SemiBold.ttf" />
     <None Include="google-services.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />

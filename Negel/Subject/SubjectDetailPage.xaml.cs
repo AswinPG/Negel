@@ -1,4 +1,6 @@
-﻿using Negel.Models;
+﻿using MockTest.Models;
+using MockTest.Views;
+using Negel.Models;
 using Negel.Notes;
 using Plugin.CloudFirestore;
 using System;
@@ -16,6 +18,7 @@ namespace Negel.Subject
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SubjectDetailPage : ContentPage
     {
+        ListOfQuiz QuizTestData;
         public SubjectDetailPage()
         {
             InitializeComponent();
@@ -53,7 +56,30 @@ namespace Negel.Subject
                 });
             }
             MainCollectionView.ItemsSource = testData.Data;
-                         
+
+
+            var QuizData = await CrossCloudFirestore.Current
+                         .Instance
+                         .GetCollection("Subjects")
+                         .GetDocument("SEPM")
+                         .GetCollection("Quiz")
+                         .GetDocumentsAsync();
+            var QuizTest = QuizData.Documents.ToList();
+            QuizTestData = new ListOfQuiz() { Data = new ObservableCollection<MockTestItem>{ }  };
+            for (int i = 0; i < QuizTest.Count; i++)
+            {
+                QuizTestData.Data.Add(new MockTestItem()
+                {
+                    Options = new List<string>()
+                    {
+                        QuizTest[0].Data["Opt1"].ToString(),QuizTest[0].Data["Opt2"].ToString(),QuizTest[0].Data["Opt3"].ToString(),QuizTest[0].Data["Opt4"].ToString()
+                    },
+                    Question = QuizTest[i].Data["Question"].ToString(),
+                    Answer = QuizTest[i].Data["Ans"].ToString(),
+                    Heading = QuizTest[i].Data["Heading"].ToString()
+                });
+            }
+
         }
 
         private void MainCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -68,6 +94,13 @@ namespace Negel.Subject
             {
 
             }
+        }
+
+        private void TestClicked(object sender, EventArgs e)
+        {
+
+            Navigation.PushAsync(new InstructionsPage(QuizTestData));
+
         }
     }
 }

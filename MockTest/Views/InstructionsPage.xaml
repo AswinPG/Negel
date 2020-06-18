@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MockTest.Views.InstructionsPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:ff="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <ff:CachedImage
+                    HorizontalOptions="FillAndExpand"
+                    Source="TopBG.png"
+                    VerticalOptions="Start" />
+                <ff:CachedImage
+                    Margin="30,0,20,35"
+                    HeightRequest="30"
+                    HorizontalOptions="Start"
+                    Source="Back.png"
+                    VerticalOptions="Center">
+                    <ff:CachedImage.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" />
+                    </ff:CachedImage.GestureRecognizers>
+                </ff:CachedImage>
+                <StackLayout
+                    Margin="0,0,0,35"
+                    HorizontalOptions="Center"
+                    Orientation="Horizontal"
+                    VerticalOptions="Center">
+                    <ff:CachedImage
+                        HeightRequest="40"
+                        HorizontalOptions="Start"
+                        Source="IconBG.png"
+                        VerticalOptions="Center" />
+                    <Label
+                        x:Name="HeadingLabel"
+                        FontFamily="Poppins-SemiBold.ttf#Poppins-SemiBold"
+                        FontSize="25"
+                        HorizontalOptions="Center"
+                        Text="Mock Exams"
+                        TextColor="White"
+                        VerticalOptions="Center" />
+                </StackLayout>
+            </Grid>
+            <Label
+                x:Name="ViewLabel"
+                Margin="20,20,20,0"
+                FontAttributes="Bold"
+                FontFamily="Poppins-SemiBold.ttf#Poppins-SemiBold"
+                FontSize="Large"
+                HorizontalOptions="Center"
+                Text="Instructions"
+                TextColor="BlueViolet"
+                VerticalOptions="Center" />
+            <BoxView
+                Margin="100,-6,100,0"
+                BackgroundColor="Blue"
+                HeightRequest="2"
+                HorizontalOptions="Center"
+                VerticalOptions="Start"
+                WidthRequest="25" />
+
+            <Label
+                Margin="20,20,20,0"
+                FontFamily="Poppins-Regular.ttf#Poppins-Regular"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                Text="Instructions will Appear here"
+                TextColor="BlueViolet"
+                VerticalOptions="Center" />
+            <Button
+                Margin="20"
+                BackgroundColor="Blue"
+                Clicked="Button_Clicked"
+                CornerRadius="15"
+                FontFamily="Poppins-Regular.ttf#Poppins-Regular"
+                Text="Lets Test My Knowledge"
+                TextColor="White"
+                VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
