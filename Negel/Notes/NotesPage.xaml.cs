@@ -1,4 +1,6 @@
-﻿using Negel.Models;
+﻿using MockTest.Models;
+using MockTest.Views;
+using Negel.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +15,23 @@ namespace Negel.Notes
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NotesPage : ContentPage
     {
-        public NotesPage(Content content)
+        ListOfQuiz ListOfQuiz;
+        public NotesPage(Content content, ListOfQuiz QuizTest)
         {
             InitializeComponent();
             TitleLabel.Text = content.Heading;
             DetailLabel.Text = content.Summary;
+            ListOfQuiz = new ListOfQuiz() { Data = new List<MockTestItem>() { } };
+            var result = QuizTest.Data.FindAll(x => x.Heading == content.Heading);
+            for(int i = 0; i < result.Count; i++)
+            {
+                ListOfQuiz.Data.Add(result[i]);
+            }
+        }
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new InstructionsPage(ListOfQuiz));
         }
     }
 }

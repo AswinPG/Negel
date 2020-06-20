@@ -58,7 +58,7 @@
                 </Image.GestureRecognizers>
             </Image>
             <Image
-                Grid.Column="1"
+                Grid.Column="2"
                 Margin="15"
                 Source="Chat.png">
                 <Image.GestureRecognizers>
@@ -66,7 +66,7 @@
                 </Image.GestureRecognizers>
             </Image>
             <Image
-                Grid.Column="2"
+                Grid.Column="1"
                 Margin="15"
                 Source="Home.png">
                 <Image.GestureRecognizers>

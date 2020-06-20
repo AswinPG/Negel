@@ -109,14 +109,14 @@ namespace MockTest.Views
 
         public void ColourAllWhite()
         {
-            OptionAFrame.BackgroundColor = Color.White;
-            OptionBFrame.BackgroundColor = Color.White;
-            OptionCFrame.BackgroundColor = Color.White;
-            OptionDFrame.BackgroundColor = Color.White;
-            OptionALabel.TextColor = Color.FromHex("#161F32");
-            OptionBLabel.TextColor = Color.FromHex("#161F32");
-            OptionCLabel.TextColor = Color.FromHex("#161F32");
-            OptionDLabel.TextColor = Color.FromHex("#161F32");
+            OptionAFrame.BackgroundColor = Color.FromHex("#413CA0");
+            OptionBFrame.BackgroundColor = Color.FromHex("#413CA0");
+            OptionCFrame.BackgroundColor = Color.FromHex("#413CA0");
+            OptionDFrame.BackgroundColor = Color.FromHex("#413CA0");
+            OptionALabel.TextColor = Color.White;
+            OptionBLabel.TextColor = Color.White;
+            OptionCLabel.TextColor = Color.White;
+            OptionDLabel.TextColor = Color.White;
         }
 
         public void Animate()
@@ -311,7 +311,7 @@ namespace MockTest.Views
     }
     public class ListOfQuiz
     {
-        public ObservableCollection<MockTestItem> Data { get; set; }
+        public List<MockTestItem> Data { get; set; }
     }
     public class Req
     {

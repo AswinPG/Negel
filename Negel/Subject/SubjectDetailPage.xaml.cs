@@ -39,6 +39,7 @@ namespace Negel.Subject
         }
         public async void GetData()
         {
+
             var Data = await CrossCloudFirestore.Current
                          .Instance
                          .GetCollection("Subjects")
@@ -46,8 +47,10 @@ namespace Negel.Subject
                          .GetCollection("Content")
                          .GetDocumentsAsync();
            var Test = Data.Documents.ToList();
-            TestData testData = new TestData() { Data = new List<Models.Content>() { } };
-            for(int i = 0; i < Test.Count; i++)
+            TestData testData = new TestData() { Data = new ObservableCollection<Content>() { } };
+            MainCollectionView.ItemsSource = testData.Data;
+            MainIndicator.IsVisible = false;
+            for (int i = 0; i < Test.Count; i++)
             {
                 testData.Data.Add(new Models.Content()
                 {
@@ -55,7 +58,7 @@ namespace Negel.Subject
                     Summary = Test[i].Data["Summary"].ToString()
                 });
             }
-            MainCollectionView.ItemsSource = testData.Data;
+            
 
 
             var QuizData = await CrossCloudFirestore.Current
@@ -65,14 +68,14 @@ namespace Negel.Subject
                          .GetCollection("Quiz")
                          .GetDocumentsAsync();
             var QuizTest = QuizData.Documents.ToList();
-            QuizTestData = new ListOfQuiz() { Data = new ObservableCollection<MockTestItem>{ }  };
+            QuizTestData = new ListOfQuiz() { Data = new List<MockTestItem>{ }  };
             for (int i = 0; i < QuizTest.Count; i++)
             {
                 QuizTestData.Data.Add(new MockTestItem()
                 {
                     Options = new List<string>()
                     {
-                        QuizTest[0].Data["Opt1"].ToString(),QuizTest[0].Data["Opt2"].ToString(),QuizTest[0].Data["Opt3"].ToString(),QuizTest[0].Data["Opt4"].ToString()
+                        QuizTest[i].Data["Opt1"].ToString(),QuizTest[i].Data["Opt2"].ToString(),QuizTest[i].Data["Opt3"].ToString(),QuizTest[i].Data["Opt4"].ToString()
                     },
                     Question = QuizTest[i].Data["Question"].ToString(),
                     Answer = QuizTest[i].Data["Ans"].ToString(),
@@ -87,7 +90,8 @@ namespace Negel.Subject
             if (MainCollectionView.SelectedItem != null)
             {
                 Content data = e.CurrentSelection[0] as Content;
-                Navigation.PushAsync(new NotesPage(data)); 
+
+                Navigation.PushAsync(new NotesPage(data,QuizTestData)); 
                 MainCollectionView.SelectedItem = null;
             }
             else

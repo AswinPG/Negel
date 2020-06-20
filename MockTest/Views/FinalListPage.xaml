@@ -53,7 +53,7 @@
                 SelectionChanged="MainCollectionView_SelectionChanged"
                 SelectionMode="Single">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="3" />
+                    <GridItemsLayout Orientation="Vertical" Span="5" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
@@ -62,8 +62,7 @@
                             <BoxView
                                 Margin="5"
                                 BackgroundColor="{Binding AttendedColour}"
-                                CornerRadius="80"
-                                HeightRequest="80" />
+                                CornerRadius="80" />
                             <Label
                                 FontAttributes="Bold"
                                 HorizontalOptions="Center"

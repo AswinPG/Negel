@@ -111,7 +111,7 @@ namespace Negel
     }
     public class TestData
     {
-        public List<Models.Content> Data { get; set; }
+        public ObservableCollection<Models.Content> Data { get; set; }
     }
 
     public class Questions
