@@ -24,6 +24,7 @@ namespace Negel.Droid
             Xamarin.Essentials.Platform.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
             CachedImageRenderer.Init(true);
+            Plugin.CurrentActivity.CrossCurrentActivity.Current.Init(this, savedInstanceState);
             FirebaseApp.InitializeApp(this);
             LoadApplication(new App());
         }

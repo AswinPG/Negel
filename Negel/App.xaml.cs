@@ -1,4 +1,5 @@
-﻿using Negel.Subject;
+﻿using Negel.Login;
+using Negel.Subject;
 using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +12,7 @@ namespace Negel
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage( new MainPage());
+            MainPage = new NavigationPage( new LoginPage());
         }
 
         protected override void OnStart()
