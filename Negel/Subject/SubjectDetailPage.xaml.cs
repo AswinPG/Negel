@@ -103,7 +103,7 @@ namespace Negel.Subject
         private void TestClicked(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new InstructionsPage(QuizTestData));
+            Navigation.PushAsync(new InstructionsPage(QuizTestData,"General", App.Current.Properties["UserId"].ToString()));
 
         }
     }

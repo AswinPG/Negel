@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="Negel.Profile.ProfilePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    BackgroundColor="#0E153A"
+    NavigationPage.HasNavigationBar="False"
+    mc:Ignorable="d">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Label
+                FontAttributes="Bold"
+                FontSize="20"
+                HorizontalOptions="CenterAndExpand"
+                Text="Hi Student..!"
+                TextColor="White"
+                VerticalOptions="Start" />
+            <Label
+                HorizontalOptions="Center"
+                Text="Your Stats"
+                TextColor="White" />
+            <Grid>
+                <ActivityIndicator
+                    x:Name="MainIndicator"
+                    HeightRequest="70"
+                    HorizontalOptions="Center"
+                    IsRunning="True"
+                    VerticalOptions="Center"
+                    Color="White" />
+                <CollectionView x:Name="MainCollectionView" SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout>
+                                <Frame
+                                    Margin="10"
+                                    Padding="10"
+                                    BackgroundColor="#0E153A"
+                                    BorderColor="Blue"
+                                    CornerRadius="10">
+                                    <StackLayout>
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontFamily="Poppins-Bold.ttf#Poppins-Bold"
+                                            FontSize="16"
+                                            HorizontalOptions="Start"
+                                            Text="{Binding SubName}"
+                                            TextColor="White"
+                                            VerticalOptions="Center" />
+                                        <Label
+                                            FontAttributes="Bold"
+                                            FontFamily="Poppins-Bold.ttf#Poppins-Bold"
+                                            FontSize="14"
+                                            HorizontalOptions="Start"
+                                            Text="{Binding Score}"
+                                            TextColor="White"
+                                            VerticalOptions="Center" />
+                                    </StackLayout>
+
+
+                                </Frame>
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

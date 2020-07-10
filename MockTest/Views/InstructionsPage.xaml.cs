@@ -13,9 +13,12 @@ namespace MockTest.Views
     public partial class InstructionsPage : ContentPage
     {
         ListOfQuiz QuizTestData;
-        public InstructionsPage(ListOfQuiz Data)
+        string Heading;
+        public InstructionsPage(ListOfQuiz Data, string Head, string UserID)
         {
             InitializeComponent();
+            Loader.Loader.userID(UserID);
+            Heading = Head;
             QuizTestData = new ListOfQuiz() { Data = new List<Models.MockTestItem>() { } };
             Random random = new Random();
             int number;
@@ -47,7 +50,7 @@ namespace MockTest.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new MockTestPage(QuizTestData));
+            await Navigation.PushAsync(new MockTestPage(QuizTestData, Heading));
         }
     }
 }

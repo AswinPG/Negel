@@ -1,4 +1,7 @@
-﻿using Negel.Models;
+﻿using MockTest.Loader;
+using Negel.Chat;
+using Negel.Models;
+using Negel.Profile;
 using Negel.Subject;
 using Plugin.CloudFirestore;
 using System;
@@ -23,6 +26,7 @@ namespace Negel
         public MainPage()
         {
             InitializeComponent();
+            
             MainCollectionView.ItemsSource = new ObservableCollection<string>()
             {
                 "SEPM",
@@ -85,7 +89,7 @@ namespace Negel
 
         private void ProfileTapped(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new ProfilePage());
         }
         private void HomeTapped(object sender, EventArgs e)
         {
@@ -93,7 +97,7 @@ namespace Negel
         }
         private void ChatTapped(object sender, EventArgs e)
         {
-
+            Navigation.PushAsync(new ChatPage());
         }
 
         private void MainCollectionView_SelectionChanged(object sender, SelectionChangedEventArgs e)

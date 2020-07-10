@@ -24,8 +24,9 @@ namespace MockTest.Views
         public int score = 0;
         public int wrong = 0;
         Stopwatch stopwatch;
+        bool IsGen = false;
         //string Did;
-        public MockTestPage(ListOfQuiz QuizTestData)
+        public MockTestPage(ListOfQuiz QuizTestData,string Head)
         {
             InitializeComponent();
             //Did = Id;
@@ -36,6 +37,7 @@ namespace MockTest.Views
             CallAPI();
             stopwatch = new Stopwatch();
             Loader.Loader.SetMP(this);
+            Loader.Loader.Heading = Head;
 
         }
 

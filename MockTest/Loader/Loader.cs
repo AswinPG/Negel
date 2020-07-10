@@ -9,6 +9,13 @@ namespace MockTest.Loader
     {
         //public static readonly DashBoardView dBoard;
         public static MockTestPage MP { get; set; }
+        public static string Heading { get; set; }
+        public static string UserID { get; set; }
+
+        public static void userID(string Uid)
+        {
+            UserID = Uid;
+        }
         public static void SetMP(MockTestPage dBoard)
         {
             MP = dBoard;

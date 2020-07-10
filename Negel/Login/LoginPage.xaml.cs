@@ -1,4 +1,5 @@
-﻿using Plugin.FirebaseAuth;
+﻿using Plugin.CloudFirestore;
+using Plugin.FirebaseAuth;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,24 @@ namespace Negel.Login
                 var result = await CrossFirebaseAuth.Current.Instance.SignInWithCredentialAsync(credential);
                 string UserID = result.User.Uid;
                 App.Current.Properties["UserId"] = UserID;
+                var query = await CrossCloudFirestore.Current
+                                     .Instance
+                                     .GetCollection("Users")
+                                     .WhereEqualsTo("UserID", UserID)
+                                     .GetDocumentsAsync();
+                
+                if (query.Count == 0)
+                {
+                    await CrossCloudFirestore.Current
+                         .Instance
+                         .GetCollection("Users")
+                         .AddDocumentAsync(new { UserID });
+                }
+                else
+                {
+
+                }
+                
                 await Navigation.PushAsync(new MainPage());
             }
             catch (Exception u)
