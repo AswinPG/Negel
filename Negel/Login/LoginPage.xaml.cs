@@ -31,8 +31,8 @@ namespace Negel.Login
         {
             try
             {
-                await LoginYummyButton.ScaleTo(.95);
-                LoginYummyButton.ScaleTo(1);
+                //await LoginYummyButton.ScaleTo(.95);
+                //LoginYummyButton.ScaleTo(1);
                 var credential = CrossFirebaseAuth.Current.PhoneAuthProvider.GetCredential(CrossFirebaseAuth.Current.Instance, verificationResult.VerificationId, CodeEntry.Text);
                 var result = await CrossFirebaseAuth.Current.Instance.SignInWithCredentialAsync(credential);
                 string UserID = result.User.Uid;
@@ -54,8 +54,9 @@ namespace Negel.Login
                 {
 
                 }
-                
-                await Navigation.PushAsync(new MainPage());
+
+                //await Navigation.PushAsync(new MainPage());
+                NameFrame.IsVisible = true;
             }
             catch (Exception u)
             {
@@ -75,6 +76,20 @@ namespace Negel.Login
                     await DisplayAlert("OTP Sent", "An otp has been sent to " + PlainEntryEntry.Text, "Ok");
                 }
             }
+        }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            if(NameEntry.Text != "")
+            {
+                App.Current.Properties["UserName"] = NameEntry.Text;
+                await Navigation.PushAsync(new MainPage());
+            }
+            else
+            {
+                await DisplayAlert("No Name Entered", "Please Enter your name to continue ", "Ok");
+            }
+            
         }
 
         //public async void Play1Async()

@@ -5,7 +5,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    BackgroundColor="#0E153A"
     NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
     <ContentPage.Content>
@@ -17,7 +16,7 @@
                 FontFamily="Poppins-Bold.ttf#Poppins-Bold"
                 FontSize="28"
                 HorizontalOptions="Center"
-                TextColor="White"
+                TextColor="Black"
                 VerticalOptions="Center" />
             <ScrollView>
                 <Label
@@ -25,21 +24,20 @@
                     Margin="18"
                     CharacterSpacing="1"
                     FontFamily="Poppins-Regular.ttf#Poppins-Regular"
-                    FontSize="20"
+                    FontSize="18"
                     HorizontalOptions="Center"
                     HorizontalTextAlignment="Start"
                     LineBreakMode="CharacterWrap"
-                    TextColor="White"
+                    TextColor="Black"
                     VerticalOptions="Center" />
             </ScrollView>
             <Button
                 Margin="30,3,30,20"
-                
+                BackgroundColor="#413CA0"
                 Clicked="Button_Clicked"
                 CornerRadius="10"
-                Text="Practice Quiz"
                 FontFamily="Poppins-Bold.ttf#Poppins-Bold"
-                BackgroundColor="#413CA0"
+                Text="Practice Quiz"
                 TextColor="White"
                 VerticalOptions="End" />
 

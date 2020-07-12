@@ -7,17 +7,20 @@
     xmlns:forms="clr-namespace:FFImageLoading.Svg.Forms;assembly=FFImageLoading.Svg.Forms"
     xmlns:materialframe="clr-namespace:Sharpnado.MaterialFrame;assembly=Sharpnado.MaterialFrame"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    BackgroundColor="#0E153A"
     NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
 
     <StackLayout>
-        <Image
-            Margin="20"
-            HeightRequest="100"
-            Source="NLogo.png" />
+        <Grid BackgroundColor="#0E153A">
+            <Image
+                Margin="20"
+                HeightRequest="100"
+                Source="NLogo.png" />
+        </Grid>
+
         <CollectionView
             x:Name="MainCollectionView"
+            Margin="0,20,0,0"
             SelectionChanged="MainCollectionView_SelectionChanged"
             SelectionMode="Single">
             <CollectionView.ItemsLayout>
@@ -33,14 +36,14 @@
                             FontSize="22"
                             HorizontalOptions="Start"
                             Text="{Binding .}"
-                            TextColor="White"
+                            TextColor="Black"
                             VerticalOptions="Center" />
                     </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
         <!--<Button Clicked="Button_Clicked" Text="AddData" />-->
-        <Grid VerticalOptions="EndAndExpand">
+        <Grid BackgroundColor="Black" VerticalOptions="EndAndExpand">
             <Grid.RowDefinitions>
                 <RowDefinition Height="65" />
             </Grid.RowDefinitions>

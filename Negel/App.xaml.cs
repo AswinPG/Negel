@@ -11,8 +11,12 @@ namespace Negel
         public App()
         {
             InitializeComponent();
-
-            MainPage = new NavigationPage( new LoginPage());
+            if (App.Current.Properties.ContainsKey("UserName"))
+            {
+                MainPage = new NavigationPage(new MainPage());
+            }
+            else
+                MainPage = new NavigationPage( new LoginPage());
         }
 
         protected override void OnStart()

@@ -18,6 +18,7 @@ namespace Negel.Profile
         public ProfilePage()
         {
             InitializeComponent();
+            NameLabel.Text = App.Current.Properties["UserName"].ToString();
             GetData();
         }
 

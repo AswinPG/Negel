@@ -59,12 +59,30 @@
                 VerticalOptions="Start"
                 WidthRequest="25" />
 
+
+
             <Label
                 Margin="20,20,20,0"
                 FontFamily="Poppins-Regular.ttf#Poppins-Regular"
                 FontSize="Medium"
                 HorizontalOptions="Center"
-                Text="Instructions will Appear here"
+                Text="-&gt;  The test consists of MCQ."
+                TextColor="WhiteSmoke"
+                VerticalOptions="Center" />
+            <Label
+                Margin="20,20,20,0"
+                FontFamily="Poppins-Regular.ttf#Poppins-Regular"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                Text="-&gt;  Select the right option for each question."
+                TextColor="WhiteSmoke"
+                VerticalOptions="Center" />
+            <Label
+                Margin="20,20,20,0"
+                FontFamily="Poppins-Regular.ttf#Poppins-Regular"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                Text="-&gt;  Click on 'Complete test' to finish the test."
                 TextColor="WhiteSmoke"
                 VerticalOptions="Center" />
             <Button
@@ -72,8 +90,9 @@
                 BackgroundColor="#413CA0"
                 Clicked="Button_Clicked"
                 CornerRadius="15"
-                FontFamily="Poppins-Regular.ttf#Poppins-Regular"
-                Text="Lets Test My Knowledge"
+                FontFamily="Poppins-Bold.ttf#Poppins-Bold"
+                FontSize="18"
+                Text="I'm Ready"
                 TextColor="White"
                 VerticalOptions="EndAndExpand" />
         </StackLayout>

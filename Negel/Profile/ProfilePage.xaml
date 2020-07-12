@@ -5,22 +5,27 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    BackgroundColor="#0E153A"
     NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
     <ContentPage.Content>
-        <StackLayout Padding="20">
-            <Label
-                FontAttributes="Bold"
-                FontSize="20"
-                HorizontalOptions="CenterAndExpand"
-                Text="Hi Student..!"
-                TextColor="White"
-                VerticalOptions="Start" />
-            <Label
-                HorizontalOptions="Center"
-                Text="Your Stats"
-                TextColor="White" />
+        <StackLayout Padding="0">
+            <Grid BackgroundColor="#0E153A">
+                <StackLayout Padding="20">
+                    <Label
+                        x:Name="NameLabel"
+                        FontAttributes="Bold"
+                        FontSize="24"
+                        HorizontalOptions="CenterAndExpand"
+                        Text="Hi Student..!"
+                        TextColor="White"
+                        VerticalOptions="Start" />
+                    <Label
+                        HorizontalOptions="Center"
+                        Text="Your Stats"
+                        TextColor="White" />
+                </StackLayout>
+            </Grid>
+
             <Grid>
                 <ActivityIndicator
                     x:Name="MainIndicator"
@@ -28,7 +33,7 @@
                     HorizontalOptions="Center"
                     IsRunning="True"
                     VerticalOptions="Center"
-                    Color="White" />
+                    Color="Blue" />
                 <CollectionView x:Name="MainCollectionView" SelectionMode="Single">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
@@ -36,25 +41,25 @@
                                 <Frame
                                     Margin="10"
                                     Padding="10"
-                                    BackgroundColor="#0E153A"
-                                    BorderColor="Blue"
+                                    BackgroundColor="White"
+                                    BorderColor="#0E153A"
                                     CornerRadius="10">
-                                    <StackLayout>
+                                    <StackLayout HorizontalOptions="Center">
                                         <Label
                                             FontAttributes="Bold"
                                             FontFamily="Poppins-Bold.ttf#Poppins-Bold"
                                             FontSize="16"
                                             HorizontalOptions="Start"
                                             Text="{Binding SubName}"
-                                            TextColor="White"
+                                            TextColor="Black"
                                             VerticalOptions="Center" />
                                         <Label
                                             FontAttributes="Bold"
                                             FontFamily="Poppins-Bold.ttf#Poppins-Bold"
                                             FontSize="14"
-                                            HorizontalOptions="Start"
+                                            HorizontalOptions="Center"
                                             Text="{Binding Score}"
-                                            TextColor="White"
+                                            TextColor="Black"
                                             VerticalOptions="Center" />
                                     </StackLayout>
 

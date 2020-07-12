@@ -5,29 +5,24 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:d="http://xamarin.com/schemas/2014/forms/design"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    BackgroundColor="#0E153A"
     NavigationPage.HasNavigationBar="False"
     mc:Ignorable="d">
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                Margin="30"
-                FontAttributes="Bold"
-                FontSize="28"
-                HorizontalOptions="Center"
-                Text="SEPM"
-                TextColor="White"
-                VerticalOptions="Center" />
             <Button
-                Margin="20,10,20,10"
-                BackgroundColor="#413CA0"
+                Margin="30"
+                BackgroundColor="#0E153A"
+                CharacterSpacing="2"
                 CornerRadius="10"
                 FontFamily="Poppins-Bold.ttf#Poppins-Bold"
-                Text="Video Lectures"
-                TextColor="White" />
+                FontSize="28"
+                HorizontalOptions="FillAndExpand"
+                Text="SEPM"
+                TextColor="White"
+                VerticalOptions="FillAndExpand" />
             <Frame
                 Margin="20,10,20,10"
-                BackgroundColor="#31227A"
+                BackgroundColor="White"
                 CornerRadius="15">
                 <Grid>
                     <ActivityIndicator
@@ -36,7 +31,7 @@
                         HorizontalOptions="Center"
                         IsRunning="True"
                         VerticalOptions="Center"
-                        Color="White" />
+                        Color="Blue" />
                     <CollectionView
                         x:Name="MainCollectionView"
                         SelectionChanged="MainCollectionView_SelectionChanged"
@@ -52,7 +47,7 @@
                                         FontSize="22"
                                         HorizontalOptions="Start"
                                         Text="{Binding Heading}"
-                                        TextColor="White"
+                                        TextColor="Black"
                                         VerticalOptions="Center" />
                                 </Grid>
                             </DataTemplate>
@@ -64,7 +59,7 @@
             </Frame>
             <Button
                 Margin="30,10,30,20"
-                BackgroundColor="#413CA0"
+                BackgroundColor="#0E153A"
                 Clicked="TestClicked"
                 CornerRadius="10"
                 FontFamily="Poppins-Bold.ttf#Poppins-Bold"
